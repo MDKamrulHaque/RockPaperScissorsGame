@@ -1,0 +1,15 @@
+﻿<div class="winningCard">
+    <div>
+        <h3>@Info</h3>
+        <button class="btn btn-primary" @onclick="OnClickCallback"> Play Again: New Game</button>
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+    public string Info { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+}

@@ -1,0 +1,26 @@
+﻿
+/* Style Sheet for the components*/
+body {
+}
+
+.sellected-image
+{
+    font-size:128px;
+    text-shadow: 0 0 20px #101820FF;
+
+}
+
+.image-to-sellect {
+
+    font-size: 100px;
+    text-shadow: 0 0 20px #101820FF;
+    cursor: pointer;
+    position: relative;
+    left: 100px;
+}
+
+.image-to-sellect:hover
+{
+    transform:scale(1.5);
+}
+

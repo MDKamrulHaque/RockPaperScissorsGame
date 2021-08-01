@@ -1,0 +1,52 @@
+﻿@inject Options options
+    
+@* The UT for the game*@
+
+    <div class="container">
+
+        <div class="row mt-3">
+
+            <div class="col-6 text-center text-uppercase"><h1> Your Score : @playerScore </h1></div>
+            <div class="col-6 text-center text-uppercase"><h1> Computer Score: @computerScore </h1></div>
+
+        </div>
+        <div class="row mt-3" style="height:200px;">
+            @*Images (emojis) to display for the user to sellect*@
+            <div class="col-6 text-center sellected-image">
+
+                @playerSelection
+            </div>
+
+            <div class="col-6 text-center sellected-image">
+                @computerSelection
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-3" style="height:100px;">
+            <h3>@message</h3>
+        </div>
+
+        <div class="row mt-3">
+
+            @foreach (var i in Enumerable.Range(0, 5)) @* players options to chose from *@
+            {
+                var choice = i;
+                <div class="col-2 text-center image-to-sellect" @onclick="(()=> OnPlayerPicked(choice))">
+                    @options[i]
+                </div>
+            }
+
+        </div>
+        @if (gameEnded)
+        {
+            @*Btn to start a new game  *@
+            <ScoreBoard Info="@info" OnClickCallback="NewGame" />
+        }
+
+
+    </div>
+
+
+
